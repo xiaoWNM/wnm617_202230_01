@@ -1,5 +1,8 @@
-# wnm617_202230_01
-WNM 617: Mobile Tech
+# Xiaoyu Ma
 
-## YOU SHOULD NEVER EDIT THIS FILE.
-This one is for the main project.
+## Class Project Mobile Tech
+
+## Important Links
+
+- https://code.xiaoyu-ma.com
+- https://code.xiaoyu-ma.com/aau/wnm617/cline.hamilton
