@@ -4,5 +4,5 @@
 
 ## Important Links
 
-- https://code.xiaoyu-ma.com
-- https://code.xiaoyu-ma.com/aau/wnm617/cline.hamilton
+- http://code.xiaoyu-ma.com
+- http://code.xiaoyu-ma.com/aau/wnm617/ma.xiaoyu/profile/
