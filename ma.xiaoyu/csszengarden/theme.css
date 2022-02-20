@@ -1,0 +1,47 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Shizuru&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Shizuru&display=swap');
+
+body {
+ background-image: url("img/background.jpg");
+}
+
+.summary {
+    margin-bottom: 100px;
+}
+
+.page-wrapper {
+    max-width:800px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+div h3 {
+    visibility:hidden;
+}
+
+.explanation:hover h3, .participation:hover h3, 
+.preamble:hover h3, .benefits:hover h3, .requirements:hover h3 {
+    visibility: visible;
+}
+
+.design-selection h3, .design-archives h3, .zen-resources h3{
+    visibility: visible;
+}
+
+h1,h3 {
+  font-family: Shizuru, Helvetica, sans-serif;
+  font-size: 40px;
+}
+
+body {
+   font-family: Nunito Sans, Helvetica, sans-serif; 
+}
+
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
