@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snif</title>
+
+    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="lib/js/jquery-2.2.4.min.js"></script>
+    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body>
+
+    <section data-role="page" id="signin-page">
+        <div data-role="main">
+            <form id="signin-form" class="form">
+                <div class="form-control">  
+                   <label for="signin-username" class="form-label">Username</label>
+                   <input type="text" id="signin-username" data-role="none" class="form-input"
+                   placeholder="Type your Username">
+
+                </div>
+                <!--<input type="submit" data-role="none"> -->
+                <div class="form-control"> 
+                   <label for="signin-password" class="form-label">Password</label>
+                   <input type="password" id="signin-password" data-role="none" class="form-input"
+                   placeholder="Type your Password">
+                <div class="form-control">                          
+                   <a href="#home-page" class="form-button">Submit</a>
+                </div>
+            </form>
+    </section>
+
+
+    <section data-role="page" id="home-page">
+        <header data-role="header">
+            <h1>Last seen dogs</h1>
+            <ul>
+                <li class="flex-stretch"></li>
+                <li><a href="#">Add</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            <!--ul>li*10>a[href=#dog-profile-page]>{Dog $} -->
+            <ul>
+                <li>
+                    <a href="#dog-profile-page">Dog 1</a>
+                    <a href="#dog-map-page">location</a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">Dog 2</a>
+                    <a href="#dog-map-page">location</a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">Dog 2</a>
+                    <a href="#dog-map-page">location</a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">Dog 4</a>
+                    <a href="#dog-map-page">location</a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">Dog 1</a>
+                    <a href="#dog-map-page">location</a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">Dog 5</a>
+                    <a href="#dog-map-page">location</a>
+                </li>   
+            </ul>
+        </div>
+        <footer data-role="footer">
+            <ul>
+                <li><a href="#home-page">Home</a></li>
+                <li><a href="#dog-page">Dog</a></li>
+                <li><a href="#user-profile-page">Profile</a></li>
+            </ul>
+        </footer>
+    </section>
+
+    <section data-role="page" id="dog-map-page">
+        <header data-role="header">
+            <h1>Dog locations</h1>
+            <ul>
+                <li><a href="#" data-rel="back">Back</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            <img src="img/map.png">
+        </div>
+        <footer data-role="footer">
+            <ul>
+                <li><a href="#home-page">Home</a></li>
+                <li><a href="#dog-page">Dog</a></li>
+                <li><a href="#user-profile-page">Profile</a></li>
+            </ul>
+        </footer>
+    </section>
+
+
+
+    <section data-role="page" id="dog-page">
+        <header data-role="header">
+            <h1>All my dogs</h1>
+            <ul>
+                <li class="flex-stretch"></li>
+                <li><a href="#">Add</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            <!--ul>li*10>a[href=#dog-profile-page]>{Dog $} -->
+            <ul>
+                <li>
+                    <a href="#dog-profile-page">Dog 1</a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">Dog 2</a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">Dog 3</a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">Dog 4</a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">Dog 5</a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">Dog 6</a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">Dog 7</a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">Dog 8</a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">Dog 9</a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">Dog 10</a>
+                </li>
+            </ul>
+        </div>
+
+        <footer data-role="footer">
+            <ul>
+                <li><a href="#home-page">Home</a></li>
+                <li><a href="#dog-page">Dog</a></li>
+                <li><a href="#user-profile-page">Profile</a></li>
+
+            </ul>
+        </footer>
+    </section>
+
+
+
+    <section data-role="page" id="user-profile-page">
+        <header data-role="header">
+            <h1>User</h1>
+            <ul>
+                <li><a href="#" data-rel="back">Back</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            user profile
+            <a href="#user-profile-edit-page">Edit</a> 
+            <div class="dog-img">User image</div>
+        </div>
+        <form id="signin-form" class="form">
+                <div class="form-control">  
+                   <label for="signin-username" class="form-label">Name: name</label>
+                </div>
+                <!--<input type="submit" data-role="none"> -->
+                <div class="form-control"> 
+                   <label for="signin-password" class="form-label">Gender: gender</label>
+                </div>
+                <div class="form-control">  
+                   <label for="signin-username" class="form-label">Job: job</label>
+                </div>
+                <!--<input type="submit" data-role="none"> -->
+                <div class="form-control"> 
+                   <label for="signin-password" class="form-label">Favorite dog: dog</label>
+                </div>
+            </form>
+        <footer data-role="footer">
+            <ul>
+                <li><a href="#home-page">Home</a></li>
+                <li><a href="#dog-page">Dog</a></li>
+                <li><a href="#user-profile-page">Profile</a></li>
+            </ul>
+        </footer>
+    </section>
+    
+
+    <section data-role="page" id="user-profile-edit-page">
+        <header data-role="header">
+            <h1>User</h1>
+            <ul>
+                <li><a href="#" data-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#user-profile-page">Save</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            user profile
+            <a href="#dog-edit-page">Edit</a> 
+            <div class="dog-img">User image</div>
+        </div>
+        <form id="signin-form" class="form">
+                <div class="form-control">  
+                   <label for="signin-username" class="form-label">Name</label>
+                   <input type="text" id="signin-username" data-role="none" class="form-input"
+                   placeholder="Type your name">
+                </div>
+                <!--<input type="submit" data-role="none"> -->
+                <div class="form-control"> 
+                   <label for="signin-password" class="form-label">Gender</label>
+                   <input type="password" id="signin-password" data-role="none" class="form-input"
+                   placeholder="Type your gender">
+                </div>
+                <div class="form-control">  
+                   <label for="signin-username" class="form-label">Job</label>
+                   <input type="text" id="signin-username" data-role="none" class="form-input"
+                   placeholder="Type your job">
+                </div>
+                <!--<input type="submit" data-role="none"> -->
+                <div class="form-control"> 
+                   <label for="signin-password" class="form-label">Favorite dog</label>
+                   <input type="password" id="signin-password" data-role="none" class="form-input"
+                   placeholder="Type the breed name">
+                </div>
+            </form>
+        <footer data-role="footer">
+        </footer>
+    </section>
+
+
+    <section data-role="page" id="user-edit-page">
+        <header data-role="header">
+            <h1>Edit User</h1>
+            <ul>
+                <li><a href="#" data-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#list-page">Save</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            Form 
+        </div>
+        <footer data-role="footer">
+            <ul>
+                <li><a href="#home-page">Home</a></li>
+                <li><a href="#dog-page">Dog</a></li>
+                <li><a href="#user-profile-page">Profile</a></li>
+
+            </ul>
+        </footer>
+    </section>
+
+
+    <section data-role="page" id="dog-profile-edit-page">
+        <header data-role="header">
+            <h1>Dog Profile Edit</h1>
+            <ul>
+                <li><a href="#" data-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#dog-profile-page">Save</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            <div class="dog-img">Dog image</div>
+        </div>
+        <form id="signin-form" class="form">
+                <div class="form-control">  
+                   <label for="signin-username" class="form-label">Username</label>
+                   <input type="text" id="signin-username" data-role="none" class="form-input"
+                   placeholder="Type your Username">
+                </div>
+                <!--<input type="submit" data-role="none"> -->
+                <div class="form-control"> 
+                   <label for="signin-password" class="form-label">Password</label>
+                   <input type="password" id="signin-password" data-role="none" class="form-input"
+                   placeholder="Type your Password">
+                </div>
+                <div class="form-control">  
+                   <label for="signin-username" class="form-label">Username</label>
+                   <input type="text" id="signin-username" data-role="none" class="form-input"
+                   placeholder="Type your Username">
+                </div>
+                <!--<input type="submit" data-role="none"> -->
+                <div class="form-control"> 
+                   <label for="signin-password" class="form-label">Password</label>
+                   <input type="password" id="signin-password" data-role="none" class="form-input"
+                   placeholder="Type your Password">
+                </div>
+            </form>
+        <footer data-role="footer">
+        </footer>
+    </section>
+
+
+    <section data-role="page" id="dog-profile-page">
+        <header data-role="header">
+            <h1>Dog</h1>
+            <ul>
+                <li><a href="#" data-rel="back">Back</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            Dog profile
+            <a href="#dog-profile-edit-page">Edit</a> 
+            <div class="dog-img">Dog image</div>
+        </div>
+        <form id="signin-form" class="form">
+                <div class="form-control">  
+                   <label for="signin-username" class="form-label">Username: dog name</label>
+                </div>
+                <!--<input type="submit" data-role="none"> -->
+                <div class="form-control"> 
+                   <label for="signin-password" class="form-label">Password: password</label>
+                </div>
+                <div class="form-control">  
+                   <label for="signin-username" class="form-label">Username: user name</label>
+                </div>
+                <!--<input type="submit" data-role="none"> -->
+                <div class="form-control"> 
+                   <label for="signin-password" class="form-label">Password: password</label>
+                </div>
+            </form>
+        <footer data-role="footer">
+            <ul>
+                <li><a href="#home-page">Home</a></li>
+                <li><a href="#dog-page">dog</a></li>
+                <li><a href="#user-profile-page">Profile</a></li>
+
+            </ul>
+        </footer>
+    </section>
+</body>
+</html>
