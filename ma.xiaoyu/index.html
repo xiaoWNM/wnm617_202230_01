@@ -58,7 +58,7 @@
                 <!--<input type="submit" data-role="none"> -->
                 <div class="form-control"> 
                    <label for="signup-password" class="form-label">Email</label>
-                   <input type="password" id="signup-email" data-role="none" class="form-input"
+                   <input type="text" id="signup-email" data-role="none" class="form-input"
                    placeholder="Type your Email">
                 </div>
                 <div class="form-control"> 
@@ -296,7 +296,7 @@
                   You have added a new dog!!!
                   <div class="display-flex"></div>
                      <div class="flex-stretch"></div>
-                     <div class="flex-none"><button class="form-button">Ok</button></div>
+                     <!-- <div class="flex-none"><button class="form-button">Ok</button></div> -->
 
                   </div>
                </div>
@@ -329,7 +329,7 @@
                 <!--<input type="submit" data-role="none"> -->
                 <div class="form-control"> 
                    <label for="signin-password" class="form-label">Color</label>
-                   <input type="password" id="dog-color-add" data-role="none" class="form-input"
+                   <input type="text" id="dog-color-add" data-role="none" class="form-input"
                    placeholder="Toasty/red/black">
                 </div>
                 <div class="form-control">  
@@ -340,7 +340,7 @@
                 <!--<input type="submit" data-role="none"> -->
                 <div class="form-control"> 
                    <label for="signin-password" class="form-label">Personality</label>
-                   <input type="password" id="dog-personality-add" data-role="none" class="form-input"
+                   <input type="text" id="dog-personality-add" data-role="none" class="form-input"
                    placeholder="Hyper/shy/talktive">
                 </div>
         </form>
@@ -404,24 +404,24 @@
                 <div class="form-control">  
                    <label for="signin-username" class="form-label">Name</label>
                    <input type="text" id="user-profile-name" data-role="none" class="form-input"
-                   placeholder="Type your name">
+                   value="Xiao">
                 </div>
                 <!--<input type="submit" data-role="none"> -->
                 <div class="form-control"> 
                    <label for="signin-password" class="form-label">Gender</label>
-                   <input type="password" id="user-gender" data-role="none" class="form-input"
-                   placeholder="Type your gender">
+                   <input type="text" id="user-gender" data-role="none" class="form-input"
+                   value="Female">
                 </div>
                 <div class="form-control">  
                    <label for="signin-username" class="form-label">Job</label>
                    <input type="text" id="user-job" data-role="none" class="form-input"
-                   placeholder="Type your job">
+                   value="Designer">
                 </div>
                 <!--<input type="submit" data-role="none"> -->
                 <div class="form-control"> 
                    <label for="signin-password" class="form-label">Personality</label>
-                   <input type="password" id="user-personality" data-role="none" class="form-input"
-                   placeholder="Type your personality">
+                   <input type="text" id="user-personality" data-role="none" class="form-input"
+                   value="Extroverted,energetic">
                 </div>
         </form>
         <div class="flex-stretch"></div>
@@ -465,25 +465,25 @@
         <div class="flex-stretch"></div>
         <form id="dog-profile-edit-form" class="form" data-ajax="false">
                 <div class="form-control">  
-                   <label for="signup-username" class="form-label">Username</label>
+                   <label for="signup-username" class="form-label">Nickname</label>
                    <input type="text" id="signup-username" data-role="none" class="form-input"
-                   placeholder="Type your Nickname">
+                   value="Unicorn">
                 </div>
                 <!--<input type="submit" data-role="none"> -->
                 <div class="form-control"> 
-                   <label for="signup-password" class="form-label">Email</label>
-                   <input type="password" id="signup-email" data-role="none" class="form-input"
-                   placeholder="Type your Email">
+                   <label for="signup-password" class="form-label">Color</label>
+                   <input type="text" id="signup-email" data-role="none" class="form-input"
+                   value="white">
                 </div>
                 <div class="form-control"> 
-                   <label for="signup-password" class="form-label">Password</label>
-                   <input type="password" id="signup-password" data-role="none" class="form-input"
-                   placeholder="Type your Passwords">
+                   <label for="signup-password" class="form-label">Size</label>
+                   <input type="text" id="signup-password" data-role="none" class="form-input"
+                   value="Medium">
                 </div>
                 <div class="form-control"> 
-                   <label for="signup-password2" class="form-label">Confirm Password</label>
-                   <input type="password" id="signup-password-again" data-role="none" class="form-input"
-                   placeholder="Type your Passwords again">
+                   <label for="signup-password2" class="form-label">Personality</label>
+                   <input type="text" id="signup-password-again" data-role="none" class="form-input"
+                   value="Hyper">
                </div>
         </form>
         <div class="flex-stretch"></div>
@@ -505,20 +505,20 @@
             <ul class="dog-list">
                 <li>
                     <div class="profile-list-item">
-                        <div class="profile-list-label">Gender</div>
-                        <div class="profile-list-value">Female</div>
+                        <div class="profile-list-label">Color</div>
+                        <div class="profile-list-value">White</div>
                     </div>
                 </li>
                 <li>
                     <div class="profile-list-item">
-                        <div class="profile-list-label">Job</div>
-                        <div class="profile-list-value">Designer</div>
+                        <div class="profile-list-label">Size</div>
+                        <div class="profile-list-value">Medium</div>
                     </div>
                 </li>
                 <li>
                     <div class="profile-list-item">
                         <div class="profile-list-label">Personality</div>
-                        <div class="profile-list-value">Extroverted,energetic</div>
+                        <div class="profile-list-value">Hyper</div>
                     </div>
                 </li>
             </ul>
@@ -532,7 +532,7 @@
            <div class="modal-popup">
                <div class="modal-head">New Dog</div>
                <div class="modal-body">
-                  You have added a new dog!!!
+                  You have added a new dog!!
                   <div class="display-flex"></div>
                      <div class="flex-stretch"></div>
                      <!-- <div class="flex-none"><button class="form-button">Ok</button></div> -->
