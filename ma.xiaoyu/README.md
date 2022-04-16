@@ -4,9 +4,6 @@
 
 ## Important Links
 
-- http://code.xiaoyu-ma.com
-- http://code.xiaoyu-ma.com/aau/wnm617/ma.xiaoyu/profile/
+- http://code.xiaoyu-ma.com/aau/wnm617/ma.xiaoyu/index.html
 
-## CSS Assignment
 
-- http://code.xiaoyu-ma.com/aau/wnm617/ma.xiaoyu/csszengarden/
