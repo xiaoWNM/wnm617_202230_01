@@ -12,7 +12,7 @@ const checkLoginForm = () => {
     } else {
         // not logged in
         console.log('failure')
-        seesionStorage.removeItem('userId')
+        sessionStorage.removeItem('userId')
 
     }
 
