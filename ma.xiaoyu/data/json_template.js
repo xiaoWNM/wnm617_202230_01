@@ -19,7 +19,10 @@ https://json-generator.com/
       return 'https://via.placeholder.com/400/' +
         tags.integer(700,999) + '/fff/?text=' + this.username;
     },
-    date_create: '{{date(new Date(2022, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
+    date_create: '{{date(new Date(2022, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}',
+    gender: '{{gender()}}',
+    Job: '{{random("Designer", "Engineer", "Broker", "Professor", "Entrepreneur", "Student")}}',
+    age: '{{integer(18, 60)}}'
   }
 ]
 
@@ -34,9 +37,10 @@ https://json-generator.com/
     name: '{{company()}}',
     
     breed: '{{random("shiba", "shepherd", "dachshund")}}',
- 
-  
-    description: '{{lorem(2, "sentences")}}',
+    
+    color: '{{random("white", "brown", "black", "grey", "mixed")}}',
+    
+    size: '{{random("XS", "S", "M", "L", "XL")}}',
   
     img: function(tags) {
       return 'https://via.placeholder.com/400/' +
@@ -45,6 +49,7 @@ https://json-generator.com/
     date_create: '{{date(new Date(2022, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
   }
 ]
+
 
 
 // LOCATION TEMPLATE 
@@ -56,11 +61,11 @@ https://json-generator.com/
     
     lat: '{{floating(37.412569, 37.349200)}}',
     ing: '{{floating(-122.130805, -122.037669)}}',
-  
-    description: '{{lorem(2, "sentences")}}',
+    
+    mood: '{{random("calm", "hyper", "playful", "tired")}}',
+
   
     img: 'https://via.placeholder.com/400/',
-    icon: 'https://via.placeholder.com/400/?text=ICON',
     date_create: '{{date(new Date(2022, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
   }
 ]

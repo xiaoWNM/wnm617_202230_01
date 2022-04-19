@@ -52,7 +52,7 @@ a:hover {
 
 
 /* Animal list */
-.dog-list {
+.dog-list, .profile-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -373,6 +373,66 @@ header {
     font-size: 20px;
     font-weight: bold;
 }
+
+
+
+
+/*#dog-profile-page header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    background-color: rgba(255,255,255,0.1);
+}
+.dog-profile-top {
+    height: 40vh;
+}
+.dog-profile-bottom {
+    flex: 1 1 auto;
+    position: relative;
+}
+.dog-profile-nav {
+    height: var(--header-height);
+    line-height: var(--header-height);
+    display: flex;
+}
+.dog-profile-nav div {
+    text-align: center;
+    flex: 1 1 auto;
+}
+.dog-profile-bottom>div {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.dog-profile-bottom div.active {
+    opacity: 1;
+}
+
+.map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.map-placeholder {
+    background-image: url(..img/map.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.icon {
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+}*/
+
 
 
 /*footer nav */
