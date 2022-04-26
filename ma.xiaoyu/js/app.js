@@ -10,7 +10,7 @@ $(() => {
     console.log(ui.toPage[0].id)
 
     switch(ui.toPage[0].id) {
-      case "home-page": HomePage(); MostRecentLocations(); break;
+      case "home-page": HomePage(); break;
       case "dog-page": DogPage(); break;
       case "user-profile-page": UserProfilePage(); break;
       case "dog-profile-page": DogProfilePage(); break;

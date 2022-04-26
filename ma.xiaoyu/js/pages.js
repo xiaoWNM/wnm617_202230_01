@@ -1,5 +1,22 @@
 
 const HomePage = async() => {
+
+
+	let {result} = await query({
+	  type:'recent_dog_locations',
+	  params:[sessionStorage.userId]
+    });
+	console.log(result);
+
+	let valid_dogs = result.reduce((r,o)=>{
+		o.icon = o.img_color;
+		if(o.lat && o.lng) r.push(o);
+		// console.log($(o));
+		return r;
+	},[]);
+
+	let map_el = await makeMap("#home-page .map");
+	makeMarkers(map_el,valid_dogs)
 }
 
 
@@ -12,6 +29,7 @@ const DogPage = async() => {
    })
     
     console.log(dogs)
+
     $("#dog-page .dog-list").html(makeDogList(dogs));
 }
 

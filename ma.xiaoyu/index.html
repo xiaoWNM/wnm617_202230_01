@@ -1,3 +1,4 @@
+AIzaSyCj18KDsu2me3T9mVkWLmwtalzhncPqpQ8
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,11 +16,18 @@
     <script src="js/functions.js"></script>
     <script src="js/pages.js"></script>
     <script src="js/parts.js"></script>
+    <script src="js/maps.js"></script>
+
 
 
 
 
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCj18KDsu2me3T9mVkWLmwtalzhncPqpQ8"
+      defer
+    ></script>
 
 </head>
 <body>
@@ -106,7 +114,8 @@
             </ul>
         </header>
         <div data-role="main">
-            <img src="img/map.png">
+        	<div class="map"></div>
+            <!-- <img src="img/map.png"> -->
         </div>
         
         <footer data-role="footer" data-template="#footer-template"></footer>
