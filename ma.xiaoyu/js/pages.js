@@ -48,6 +48,15 @@ const UserProfilePage = async() => {
 
 }
 
+const UserEditPage = async() => {
+	let {result:dogs} = await query({
+	  type:'dog_by_id',
+	  params:[sessionStorage.userId]
+   })
+   let [user] = users;
+
+   $("#user-edit-form").html(makeUserForm(user,"user-edit"))
+}
 
 
 const DogProfilePage = async() => {
@@ -74,3 +83,39 @@ const MostRecentLocations = async() => {
 	console.log("userid:" + sessionStorage.userId)
 	console.log(locations)
 }
+
+
+
+const DogEditPage = async() => {
+	let {result:dogs} = await query({
+	  type:'dog_by_id',
+	  params:[sessionStorage.dogId]
+   })
+   let [dog] = dogs;
+
+   $("#dog-profile-edit-form").html(makeDogForm(dog,"dog-edit"))
+}
+
+const DogAddPage = async() => {
+	let {result:dogs} = await query({
+	  type:'dog_by_id',
+	  params:[sessionStorage.dogId]
+   })
+   let [dog] = dogs;
+
+   $("#dog-profile-add-form").html(makeDogForm({},"dog-add"))
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

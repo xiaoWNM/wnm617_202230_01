@@ -17,7 +17,7 @@ const makeDogList = templater(o=>`
 const makeUserProfilePage = o => `
 <div class="home-page-title">${o.name}</div>
             <div class="user-img">User image</div>
-            <a class="form-button" href="#user-profile-edit-page">Edit</a>
+            <a class="form-button" href="#user-settings-page">Settings</a>
             <ul class="profile-list">
                 <li>
                     <div class="profile-list-item">
@@ -44,6 +44,117 @@ const makeUserProfilePage = o => `
 const makeDogProfilePageDescription = o => `
 <h2>${o.name}</h2>
 <div>${o.breed}</div>
-<div>${o.size}</div>
 <div>${o.color}</div>
+<div>${o.size}</div>
 `;
+
+
+const FormControlInput = ({namespace,name,displayname,type,placeholder,value=""}) => {
+    return `<div class="form-control">  
+   <label class="form-label" for="#${namespace}-${name}">${displayname}</label>
+   <input data-role="none" class="form-input" type="${type}" id="${namespace}-${name}" placeholder="${placeholder}" value="${value}">
+</div>`;
+}
+
+
+const makeDogForm = (dog,namespace = "dog-add") => {
+return `
+${FormControlInput({
+    namespace,
+    name:"name",
+    displayname: "Name",
+    type:"text",
+    placeholder:"Type thr dog's name",
+    value:dog.name,
+})}
+${FormControlInput({
+    namespace,
+    name:"breed",
+    displayname: "Breed",
+    type:"text",
+    placeholder:"Type the breed",
+    value:dog.breed,
+})}
+${FormControlInput({
+    namespace,
+    name:"color",
+    displayname: "Color",
+    type:"text",
+    placeholder:"Type the color",
+    value:dog.color,
+})}
+${FormControlInput({
+    namespace,
+    name:"size",
+    displayname: "Size",
+    placeholder:"Type the size",
+    value:dog.size,
+})}
+`;
+}
+
+
+const makeUserForm = (user,namespace = "user-edit") => {
+return `
+${FormControlInput({
+    namespace,
+    name:"name",
+    displayname: "Name",
+    type:"text",
+    placeholder:"Type your name",
+    value:user.name,
+})}
+${FormControlInput({
+    namespace,
+    name:"gender",
+    displayname: "Gender",
+    type:"text",
+    placeholder:"Type your gender",
+    value:user.gender,
+})}
+${FormControlInput({
+    namespace,
+    name:"job",
+    displayname: "Job",
+    type:"text",
+    placeholder:"Type your job",
+    value:user.job,
+})}
+${FormControlInput({
+    namespace,
+    name:"personality",
+    displayname: "Personality",
+    placeholder:"Type words to describe your personality",
+    value:user.personality,
+})}
+`;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

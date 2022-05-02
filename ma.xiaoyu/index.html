@@ -1,4 +1,4 @@
-AIzaSyCj18KDsu2me3T9mVkWLmwtalzhncPqpQ8
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +16,7 @@ AIzaSyCj18KDsu2me3T9mVkWLmwtalzhncPqpQ8
     <script src="js/functions.js"></script>
     <script src="js/pages.js"></script>
     <script src="js/parts.js"></script>
+    <script src="js/forms.js"></script>
     <script src="js/maps.js"></script>
 
 
@@ -102,9 +103,6 @@ AIzaSyCj18KDsu2me3T9mVkWLmwtalzhncPqpQ8
 
 
 
-
-
-
     <section data-role="page" id="home-page">
         <header data-role="header">
             <img class="logo-icon" src="img/icons/logo_small.jpg">
@@ -165,37 +163,14 @@ AIzaSyCj18KDsu2me3T9mVkWLmwtalzhncPqpQ8
             <ul>
                 <li><a class="action-button" href="#" data-rel="back">Back</a></li>
                 <li class="flex-stretch"></li>
-                <li><a class="action-button" href="#dog-page" data-activate="#list-add-animal-modal">Save</a></li>
+                <li><a class="action-button js-submit-dog-add" href="#dog-page" data-activate="#list-add-animal-modal">Save</a></li>
             </ul>
         </header>
         <div>
             <div class="dog-img">Dog image</div>
         </div>
         <div class="flex-stretch"></div>
-        <form id="dog-profile-add" class="form">
-                <div class="form-control">  
-                   <label for="signin-username" class="form-label">Nickname</label>
-                   <input type="text" id="dog-nickname-add" data-role="none" class="form-input"
-                   placeholder="Type your Nickname">
-                </div>
-                <!--<input type="submit" data-role="none"> -->
-                <div class="form-control"> 
-                   <label for="signin-password" class="form-label">Color</label>
-                   <input type="text" id="dog-color-add" data-role="none" class="form-input"
-                   placeholder="Toasty/red/black">
-                </div>
-                <div class="form-control">  
-                   <label for="signin-username" class="form-label">Size</label>
-                   <input type="text" id="dog-size-add" data-role="none" class="form-input"
-                   placeholder="Extra small/small/medium/large">
-                </div>
-                <!--<input type="submit" data-role="none"> -->
-                <div class="form-control"> 
-                   <label for="signin-password" class="form-label">Personality</label>
-                   <input type="text" id="dog-personality-add" data-role="none" class="form-input"
-                   placeholder="Hyper/shy/talktive">
-                </div>
-        </form>
+        <form id="dog-profile-add-form" class="form"></form>
         <div class="flex-stretch"></div>
     </section>
 
@@ -206,7 +181,6 @@ AIzaSyCj18KDsu2me3T9mVkWLmwtalzhncPqpQ8
             <img class="logo-icon" src="img/icons/logo_small.jpg">
             <ul>
                 <li class="flex-stretch"></li>
-                <li><a class="action-button" href="#signin-page" class="js-logout">Logout</a></li>
             </ul>
         </header>
         <div data-role="main">
@@ -238,49 +212,32 @@ AIzaSyCj18KDsu2me3T9mVkWLmwtalzhncPqpQ8
     </section>
     
 
-    <section data-role="page" id="user-profile-edit-page">
+    <section data-role="page" id="user-settings-page">
         <header data-role="header">
             <img class="logo-icon" src="img/icons/logo_small.jpg">
             <ul>
                 <li><a class="action-button" href="#" data-rel="back">Back</a></li>
                 <li class="flex-stretch"></li>
-                <li><a class="action-button" href="#user-profile-page" data-activate="#list-add-dog-home-modal">Save</a></li>
+                <li><a class="action-button" href="#signin-page" class="js-logout">Logout</a></li>
+
             </ul>
         </header>
-        <div>
+        <div data-role="main">
             <div class="home-page-title">Xiao</div>
             <div class="user-img">User image</div>
+        <ul>
+        	<li><a href="#user-edit-page">Edit user</a></li>
+        	<li><a href="#user-password-page">Edit Password</a></li>
+        </ul>
         </div>
         <div class="flex-stretch"></div>
-        <form id="user-edit" class="form">
-                <div class="form-control">  
-                   <label for="signin-username" class="form-label">Name</label>
-                   <input type="text" id="user-profile-name" data-role="none" class="form-input"
-                   value="Xiao">
-                </div>
-                <!--<input type="submit" data-role="none"> -->
-                <div class="form-control"> 
-                   <label for="signin-password" class="form-label">Gender</label>
-                   <input type="text" id="user-gender" data-role="none" class="form-input"
-                   value="Female">
-                </div>
-                <div class="form-control">  
-                   <label for="signin-username" class="form-label">Job</label>
-                   <input type="text" id="user-job" data-role="none" class="form-input"
-                   value="Designer">
-                </div>
-                <!--<input type="submit" data-role="none"> -->
-                <div class="form-control"> 
-                   <label for="signin-password" class="form-label">Personality</label>
-                   <input type="text" id="user-personality" data-role="none" class="form-input"
-                   value="Extroverted,energetic">
-                </div>
-        </form>
+        <form id="user-edit-form" class="form"></form>
         <div class="flex-stretch"></div>
     </section>
 
 
-    <section data-role="page" id="dog-profile-edit-page">
+
+    <section data-role="page" id="user-profile-edit-page">
         <header data-role="header">
             <img class="logo-icon" src="img/icons/logo_small.jpg">
             <ul>
@@ -293,30 +250,32 @@ AIzaSyCj18KDsu2me3T9mVkWLmwtalzhncPqpQ8
             <img class="dog-img" src="img/unicorn.jpg">
         </div>
         <div class="flex-stretch"></div>
-        <form id="dog-profile-edit-form" class="form" data-ajax="false">
-                <div class="form-control">  
-                   <label for="`up-username" class="form-label">Nickname</label>
-                   <input type="text" id="dog-nickname-edit" data-role="none" class="form-input"
-                   value="Unicorn">
-                </div>
-                <!--<input type="submit" data-role="none"> -->
-                <div class="form-control"> 
-                   <label for="signup-password" class="form-label">Color</label>
-                   <input type="text" id="dog-color-edit" data-role="none" class="form-input"
-                   value="white">
-                </div>
-                <div class="form-control"> 
-                   <label for="signup-password" class="form-label">Size</label>
-                   <input type="text" id="dog-size-edit" data-role="none" class="form-input"
-                   value="Medium">
-                </div>
-                <div class="form-control"> 
-                   <label for="signup-password2" class="form-label">Personality</label>
-                   <input type="text" id="dog-personality-edit" data-role="none" class="form-input"
-                   value="Hyper">
-               </div>
-        </form>
+        <form id="dog-profile-edit-form" class="form" data-ajax="false"></form>
         <div class="flex-stretch"></div>
+    </section>
+
+    <section data-role="page" id="user-password-page">
+        <header data-role="header">
+        	<h1>Edit User Password</h1>
+            <ul>
+                <li><href="#" data-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#" class="js-submit-user-password">Save</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            <img class="dog-img" src="img/unicorn.jpg">
+            <form id="user-password-form" class="overscroll" data-ajax="false" style="padding:1em">
+              <div class="form-control">
+              	<label for="user-password-new" class="form-label">New Password</label>
+              	<input class="form-input" type="password" id="user-password-new" data-role="none">
+              </div>
+              <div class="form-control">
+              	<label for="user-password-confirm" class="form-label">Confirm Password</label>
+              	<input class="form-input" type="password" id="user-password-confirm" data-role="none">
+              </div>
+            </form>
+        </div>
     </section>
 
 

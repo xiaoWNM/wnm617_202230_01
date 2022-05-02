@@ -13,7 +13,12 @@ $(() => {
       case "home-page": HomePage(); break;
       case "dog-page": DogPage(); break;
       case "user-profile-page": UserProfilePage(); break;
+      case "user-edit-page": UserEditPage(); break;
       case "dog-profile-page": DogProfilePage(); break;
+      case "dog-profile-edit-page": DogEditPage(); break;
+      case "dog-profile-add-page": DogAddPage(); break;
+
+
     }
 })
 
@@ -28,7 +33,14 @@ $(() => {
       e.preventDefault();
       console.log(e)
       checkLoginForm();
+   })
 
+
+
+
+    // FORM SUBMISSIONS CLICKS
+   .on("click", ".js-submit-dog-add", function() {
+      submitDogAdd();
    })
 
 
