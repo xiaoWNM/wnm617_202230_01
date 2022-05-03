@@ -175,7 +175,7 @@ a:hover {
 #signup-form,
 #dog-profile-edit-form,
 #user-edit,
-#dog-profile-add {
+#dog-profile-add, .form {
     padding: 1em;
 }
 
@@ -323,8 +323,8 @@ header {
     background-color: white;
     border: 1px solid var(--color-sand-dark);
     margin-top:40px;
-    object-fit: contain;
-    padding:20px;
+    /*object-fit: contain;*/
+    /*padding:20px;*/
 }
 
 .user-img {

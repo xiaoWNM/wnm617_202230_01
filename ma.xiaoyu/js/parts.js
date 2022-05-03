@@ -17,7 +17,7 @@ const makeDogList = templater(o=>`
 const makeUserProfilePage = o => `
 <div class="home-page-title">${o.name}</div>
             <div class="user-img">User image</div>
-            <a class="form-button" href="#user-settings-page">Settings</a>
+            <a class="form-button" href="#user-profile-edit-page">Edit</a>
             <ul class="profile-list">
                 <li>
                     <div class="profile-list-item">
@@ -47,6 +47,23 @@ const makeDogProfilePageDescription = o => `
 <div>${o.color}</div>
 <div>${o.size}</div>
 `;
+
+
+
+
+
+const makeDogPopupBody = o => `
+<div class="display-flex">
+   <div class="animal-list-image"><img src="${o.img}" alt=""></div>
+   </div>
+       <h2>${o.name}</h2>
+       <div>${o.breed}</div>
+       <div>${o.color}</div>
+       <div>${o.size}</div>
+   </div>
+</div>
+`;
+
 
 
 const FormControlInput = ({namespace,name,displayname,type,placeholder,value=""}) => {

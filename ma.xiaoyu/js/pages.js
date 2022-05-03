@@ -17,6 +17,25 @@ const HomePage = async() => {
 
 	let map_el = await makeMap("#home-page .map");
 	makeMarkers(map_el,valid_dogs)
+
+
+	map_el.data("markers").forEach((m,i)=>{
+		console.log(m)
+		m.addListener("click",function(e){
+
+			console.log(valid_dogs[i])
+
+            // Just Navigate
+            //sessionStorage.animalId = valid_dogs[i].dog_id;
+			//$.mobile.navigate("#dog-profile-page");
+
+            // Open Google InfoWindow
+			map_el.data("infoWindow")
+			  .open(map_el.data("map"),m);
+			map_el.data("infoWindow")
+			  .setContent(makeDogPopupBody(valid_dogs[i]));
+		})
+	})
 }
 
 
@@ -49,13 +68,13 @@ const UserProfilePage = async() => {
 }
 
 const UserEditPage = async() => {
-	let {result:dogs} = await query({
-	  type:'dog_by_id',
+	let {result:users} = await query({
+	  type:'user_by_id',
 	  params:[sessionStorage.userId]
    })
    let [user] = users;
 
-   $("#user-edit-form").html(makeUserForm(user,"user-edit"))
+   $("#user-profile-edit-form").html(makeUserForm(user,"user-edit"))
 }
 
 
@@ -66,7 +85,8 @@ const DogProfilePage = async() => {
    })
    let [dog] = dogs;
    // console.log(dog);
-   
+
+   $(".dog-img").attr("src",dog.img);
    $(".dog-profile-top").css({"background-image":`url(${dog.img})`});
    $(".dog-profile-page-title").html(dog.name);
    // $(".dog-profile-decription").html(makeDogProfilePageDescription(dog));
@@ -92,7 +112,6 @@ const DogEditPage = async() => {
 	  params:[sessionStorage.dogId]
    })
    let [dog] = dogs;
-
    $("#dog-profile-edit-form").html(makeDogForm(dog,"dog-edit"))
 }
 

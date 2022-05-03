@@ -13,7 +13,7 @@ $(() => {
       case "home-page": HomePage(); break;
       case "dog-page": DogPage(); break;
       case "user-profile-page": UserProfilePage(); break;
-      case "user-edit-page": UserEditPage(); break;
+      case "user-profile-edit-page": UserEditPage(); break;
       case "dog-profile-page": DogProfilePage(); break;
       case "dog-profile-edit-page": DogEditPage(); break;
       case "dog-profile-add-page": DogAddPage(); break;
