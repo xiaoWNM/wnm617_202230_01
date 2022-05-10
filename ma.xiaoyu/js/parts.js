@@ -13,6 +13,19 @@ const makeDogList = templater(o=>`
 </li>
 `);
 
+const makeDogListForAddLocation = templater(o=>`
+<li class="dog-list-item">
+    <a href="#dog-profile-page" class="js-add-dog-location-dog-selection" data-id="${o.id}">
+        <div class="dog-list-image"><img src="${o.img}" alt=""></div>
+        <div class="dog-list-body">
+            <div class="dog-list-name">${o.name}</div>
+            <div class="dog-list-breed">${o.breed}</div>
+            <div class="dog-list-size">${o.size}</div>  
+        </div>   
+    </a>
+</li>
+`);
+
 
 const makeUserProfilePage = o => `
 <div class="home-page-title">${o.name}</div>
@@ -64,6 +77,24 @@ const makeDogPopupBody = o => `
 </div>
 `;
 
+const makeUserPasswordForm = o => `
+<div class="form-control">
+    <label for="user-username-new" class="form-label">User Name</label>
+    <input class="form-input" type="text" id="user-username-new" data-role="none" value="${o.username}">
+</div>
+<div class="form-control">
+    <label for="user-email-new" class="form-label">Email</label>
+    <input class="form-input" type="text" id="user-email-new" data-role="none" value="${o.email}">
+</div>
+<div class="form-control">
+    <label for="user-password-new" class="form-label">New Password</label>
+    <input class="form-input" type="password" id="user-password-new" data-role="none">
+</div>
+<div class="form-control">
+    <label for="user-password-confirm" class="form-label">Confirm Password</label>
+    <input class="form-input" type="password" id="user-password-confirm" data-role="none">
+</div>
+`;
 
 
 const FormControlInput = ({namespace,name,displayname,type,placeholder,value=""}) => {
@@ -139,15 +170,13 @@ ${FormControlInput({
 })}
 ${FormControlInput({
     namespace,
-    name:"personality",
-    displayname: "Personality",
-    placeholder:"Type words to describe your personality",
-    value:user.personality,
+    name:"age",
+    displayname: "Age",
+    placeholder:"Type words to describe your age",
+    value:user.age,
 })}
 `;
 }
-
-
 
 
 

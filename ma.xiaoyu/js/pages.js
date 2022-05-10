@@ -2,11 +2,13 @@
 const HomePage = async() => {
 
 
-	let {result} = await query({
+	let {result,error} = await query({
 	  type:'recent_dog_locations',
 	  params:[sessionStorage.userId]
     });
 	console.log(result);
+
+	if(error) throw(error);
 
 	let valid_dogs = result.reduce((r,o)=>{
 		o.icon = o.img_color;
@@ -77,6 +79,16 @@ const UserEditPage = async() => {
    $("#user-profile-edit-form").html(makeUserForm(user,"user-edit"))
 }
 
+const UserPasswordPage = async() => {
+	let {result:users} = await query({
+		type:'user_by_id',
+		params:[sessionStorage.userId]
+	})
+	let [user] = users;
+
+	$('#user-password-form').html(makeUserPasswordForm(user))
+}
+
 
 const DogProfilePage = async() => {
 	let {result:dogs} = await query({
@@ -123,6 +135,32 @@ const DogAddPage = async() => {
    let [dog] = dogs;
 
    $("#dog-profile-add-form").html(makeDogForm({},"dog-add"))
+}
+
+
+
+
+const ChooseLocationPage = async () => {
+	let map_el = await makeMap("#choose-location-page .map");
+
+	map_el.data("map").addListener("click",function(e){
+		console.log(e)
+		console.log(e.latLng.lat())
+		console.log(e.latLng.lng())
+		$("#location-lat").val(e.latLng.lat())
+		$("#location-lng").val(e.latLng.lng())
+	    makeMarkers(map_el,[e.latLng])
+	})
+}
+
+const ChooseDogPage = async() => {
+   // destructuring
+   let {result:dogs} = await query({
+	  type:'animals_by_user_id',
+	  params:[sessionStorage.userId]
+   })
+   console.log(dogs)
+   $("#choose-dog-page .dog-list").html(makeDogListForAddLocation(dogs));
 }
 
 
