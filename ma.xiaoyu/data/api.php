@@ -48,6 +48,24 @@ function makeQuery($c,$ps,$p,$makeResults=true) {
 }
 
 
+
+function makeUpload($file, $folder) {
+   $filename = microtime(true) . "_" . $_FILES[$file]['name'];
+
+   if(@move_uploaded_file(
+      $_FILES[$file]['tmp_name'],
+      $folder.$filename
+   )) return ["result"=>$filename];
+   else return [
+      "error"=>"File Upload Failed",
+      "filename"=>$filename
+   ];
+}
+
+
+
+
+
 function makeStatement($data) {
    $c = makeConn();
    $t = $data->type;
@@ -85,17 +103,7 @@ function makeStatement($data) {
       case "recent_dog_locations":
          return makeQuery($c,"SELECT *, a.img as img_color
          	FROM `track_animals` a
-         	JOIN (
-         	   SELECT lg.*
-         	   FROM `track_locations` lg
-         	   WHERE lg.id = (
-                  SELECT lt.id
-                  FROM `track_locations` lt
-                  WHERE lt.animal_id = lg.animal_id
-                  ORDER BY lt.date_create DESC
-                  LIMIT 1
-         	   )
-         	) l
+         	RIGHT JOIN `track_locations` l
          	ON a.id = l.animal_id
          	WHERE a.user_id = ?
          	ORDER BY l.animal_id, l.date_create DESC
@@ -137,6 +145,27 @@ function makeStatement($data) {
             (?,?,?,?, 'https:via.placeholder.com/400/?text=IMG', NOW())
             ", $p, false);
          return ["id"=>$c->lastInsertId()];
+
+
+
+      case "search_dogs":
+         $p = ["%$p[0]%", $p[1]];
+         return makeQuery($c,"SELECT *
+            FROM `track_animals`
+            WHERE
+               `name` LIKE ? AND
+               `user_id` = ?
+            ",$p);
+
+      case "filter_dogs":
+         return makeQuery($c,"SELECT *
+            FROM `track_animals`
+            WHERE
+               `$p[0]` = ? AND
+               `user_id` = ?
+            ",[$p[1],$p[2]]);
+
+
 
 
       
@@ -203,6 +232,28 @@ function makeStatement($data) {
          return["result"=>"Success"];
 
 
+
+      /* UPLOAD */
+
+      case "update_user_image":
+         makeQuery($c,"UPDATE
+            `track_users`
+            SET `img`= ?
+            WHERE `id`= ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+      case "update_dog_image":
+         makeQuery($c,"UPDATE
+            `track_animals`
+            SET `img`= ?
+            WHERE `id`= ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+
       /* DELETE */
      
       case "delete_dog":
@@ -213,8 +264,6 @@ function makeStatement($data) {
          if(isset($r['error'])) return $r;
          return["result"=>"Success"];
 
-
-   
 
 
       case "check_signin":
@@ -238,6 +287,11 @@ function makeStatement($data) {
 "SELECT * FROM track_users WHERE id = ?",
 "SELECT * FROM track_animals WHERE user_id = ?",
 */
+
+if(!empty($_FILES)) {
+   $r = makeUpload("image","../uploads/");
+   die(json_encode($r));
+}
 
 $data = json_decode(file_get_contents("php://input"));
 

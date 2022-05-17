@@ -133,6 +133,30 @@ const submitLocationAdd = async () => {
 
 
 
+const checkSearchForm = async (s) => {
+	let {result:dogs,error} = await query({
+		type: 'search_dogs',
+		params: [s, sessionStorage.userId]
+	});
+
+	if(error) throw(error);
+
+	makeDogListSet(dogs);
+}
+const checkFilter = async (s) => {
+	let {result:dogs,error} = await query({
+		type: 'filter_dogs',
+		params: [f, v, sessionStorage.userId]
+	});
+
+	if(error) throw(error);
+
+	makeDogListSet(dogs);
+}
+
+
+
+
 
 
 

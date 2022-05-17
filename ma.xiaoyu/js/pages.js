@@ -51,7 +51,11 @@ const DogPage = async() => {
     
     console.log(dogs)
 
-    $("#dog-page .dog-list").html(makeDogList(dogs));
+    makeDogListSet(dogs);
+}
+
+const makeDogListSet = (dogs) => {
+	$("#dog-page .dog-list").html(makeDogList(dogs));
 }
 
 
@@ -76,8 +80,26 @@ const UserEditPage = async() => {
    })
    let [user] = users;
 
+   console.log(user)
    $("#user-profile-edit-form").html(makeUserForm(user,"user-edit"))
+   $("#user-profile-edit-page .dog-img").attr("src", user.img)
 }
+
+const UserEditPhotoPage = async () => {
+	let {result:users} = await query({
+	  type:'user_by_id',
+	  params:[sessionStorage.userId]
+   })
+   let [user] = users;
+
+   $("#user-edit-photo-page .imagepicker").css({
+      "background-image":`url(${user.img})`
+   })
+}
+
+
+
+
 
 const UserPasswordPage = async() => {
 	let {result:users} = await query({
@@ -85,9 +107,16 @@ const UserPasswordPage = async() => {
 		params:[sessionStorage.userId]
 	})
 	let [user] = users;
+	console.log(user)
 
 	$('#user-password-form').html(makeUserPasswordForm(user))
 }
+
+
+
+
+
+
 
 
 const DogProfilePage = async() => {
@@ -97,14 +126,21 @@ const DogProfilePage = async() => {
    })
    let [dog] = dogs;
    // console.log(dog);
-
-   $(".dog-img").attr("src",dog.img);
-   $(".dog-profile-top").css({"background-image":`url(${dog.img})`});
    $(".dog-profile-page-title").html(dog.name);
    // $(".dog-profile-decription").html(makeDogProfilePageDescription(dog));
-   $(".dog-profile-color-value").html(dog.color);
-   $(".dog-profile-size-value").html(dog.size);
-   $(".dog-profile-breed-value").html(dog.breed);
+   $("#dog-profile-page [data-role='main']").html(makeDogProfilePage(dog));
+}
+
+const DogEditPhotoPage = async () => {
+	let {result:dogs} = await query({
+	  type:'dog_by_id',
+	  params:[sessionStorage.dogId]
+   })
+   let [dog] = dogs;
+
+   $("#dog-edit-photo-page .imagepicker").css({
+      "background-image":`url(${dog.img})`
+   })
 }
 
 const MostRecentLocations = async() => {
@@ -125,6 +161,7 @@ const DogEditPage = async() => {
    })
    let [dog] = dogs;
    $("#dog-profile-edit-form").html(makeDogForm(dog,"dog-edit"))
+   $("#dog-profile-edit-page .dog-img").attr("src", dog.img)
 }
 
 const DogAddPage = async() => {
@@ -136,8 +173,6 @@ const DogAddPage = async() => {
 
    $("#dog-profile-add-form").html(makeDogForm({},"dog-add"))
 }
-
-
 
 
 const ChooseLocationPage = async () => {

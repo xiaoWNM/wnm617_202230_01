@@ -37,7 +37,7 @@
         <div data-role="main" class="display-flex flex-column">
             <div class="flex-stretch"></div>
             <div style="text-align:center;margin-bottom:10vmin">
-                <img src="img/icons/logo.jpg" alt="" style="width:30vmin;height:30vmin">
+                <img src="img/icons/logo.png" alt="" style="width:60vmin;height:auto">
             </div>
             <div class="flex-stretch"></div>
             <form id="signin-form" class="form" data-ajax="false">
@@ -53,7 +53,7 @@
                    placeholder="Type your Passwords">
                </div>
                 <div class="form-control">                          
-                   <button type="submit" class="form-button" data-role="none">Submit</button>
+                   <button type="submit" class="form-button" data-role="none">Sign In</button>
                 </div>
                 <div class="form-control" style="text-align:center;font-size:0.8em;">
                     <p>New to the app? <a href="#signup-page">Sign Up!</a></p>
@@ -113,7 +113,6 @@
 
     <section data-role="page" id="home-page">
         <header data-role="header">
-            <img class="logo-icon" src="img/icons/logo_small.jpg">
             <ul>
                 <li class="flex-stretch"></li>
                 <li><a class="action-button js-location-choose-dog" href="#choose-dog-page">Add</a></li>
@@ -139,18 +138,19 @@
 
 
     <section data-role="page" id="dog-page">
-        <header data-role="header">
-            <img class="logo-icon" src="img/icons/logo_small.jpg">
+    	<header data-role="header">	
             <ul>
                 <li class="flex-stretch"></li>
                 <li><a class="action-button" href="#dog-profile-add-page">Add</a></li>
             </ul>
         </header>
+        
         <div data-role="main" class="overscroll">
-            <div class="page-title">All my dogs</div>
-            <!--ul>li*10>a[href=#dog-profile-page]>{Dog $} -->
-            <ul class="dog-list">
-            </ul>
+        	<div class="search-bar flex-none"></div>
+        	   <form data-ajax="false" id="list-search-form" class="hotdog dark">
+        	   	  <input type="search" data-role="none" placeholder="Search for a dog">
+        	   </form>
+        	<ul class="dog-list"></ul>
         </div>
 
         <footer data-role="footer" data-template="#footer-template"></footer>
@@ -173,57 +173,36 @@
 
     <section data-role="page" id="dog-profile-page">
         <header data-role="header">
-            <div class="logo-icon dog-profile-page-title">test</div>
             <ul>
                 <li><a class="action-button" href="#" data-rel="back">Back</a></li>
                 <li class="flex-stretch"></li>
-               <!--  <li><a href="#user-profile-edit-page">Edit</a></li>
-                <li class="flex-stretch"></li> -->
+                <div class="logo-icon dog-profile-page-title"></div>
+                <li class="flex-stretch"></li>
+                
             </ul>
         </header>
         <div data-role="main" class="scrollable">
-        	<!-- <div class="dog-profile-top">
-        	</div>
-        	<div class="dog-profile-nav">
-        		<div>Map</div>
-        		<div>Description</div>
-        	</div>
-        	<h1></h1>
-			<div class="dog-profile-decription"></div>       
-        	<div class="dog-profile-bottom"></div>
-        	    <div class="animal-profile-map active">
-        	    	<div class="map map-placeholder"></div>
-        	    </div>
-        	    <div class="animal-profile-decription"></div> -->       
-            <!-- <div class="dog-profile-page-title">Unicorn</div> -->
-            <img class="dog-img">
-            <a class="form-button" href="#dog-profile-edit-page">Edit</a>
-            <a class="form-button-icon js-dog-delete noclick-children">
-            	<img class="form-icon" src="img/icons/delete_icon.jpg">
-            </a>
-            <!-- <span class="nav-icon"><img class="icon" src="mg/icons/delete_icon.jpg"></span> -->
-            <ul class="dog-list">
-                <li>
-                    <div class="profile-list-item">
-                        <div class="profile-list-label">Breed</div>
-                        <div class="profile-list-value dog-profile-breed-value">Shiba inu</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="profile-list-item">
-                        <div class="profile-list-label">Color</div>
-                        <div class="profile-list-value dog-profile-color-value">Red</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="profile-list-item">
-                        <div class="profile-list-label">Size</div>
-                        <div class="profile-list-value dog-profile-size-value">Medium</div>
-                    </div>
-                </li>
-            </ul>
         </div>
         <footer data-role="footer" data-template="#footer-template"></footer>
+    </section>
+
+    <section data-role="page" id="dog-edit-photo-page">
+        <header data-role="header">
+            <ul>
+                <li><a href="#" data-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                <h1>Upload Photo</h1>
+                <li class="flex-stretch"></li>
+                <li><a href="#" class="js-submit-dog-upload">Save</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+        	<div class="img-picker-instruction">Click anywhere to update image</div>
+        	<input type="hidden" id="dog-edit-photo-image">
+        	<label class="imagepicker replace">
+               <input type='file' id="dog-edit-photo-input" data-role="none">
+        	</label>
+        </div>
     </section>
 
 
@@ -231,7 +210,6 @@
 
     <section data-role="page" id="dog-profile-add-page">
         <header data-role="header">
-            <img class="logo-icon" src="img/icons/logo_small.jpg">
             <ul>
                 <li><a class="action-button" href="#" data-rel="back">Back</a></li>
                 <li class="flex-stretch"></li>
@@ -251,7 +229,6 @@
 
     <section data-role="page" id="dog-profile-edit-page">
         <header data-role="header">
-            <img class="logo-icon" src="img/icons/logo_small.jpg">
             <ul>
                 <li><a class="action-button" href="#" data-rel="back">Back</a></li>
                 <li class="flex-stretch"></li>
@@ -274,10 +251,10 @@
 
     <section data-role="page" id="choose-dog-page">
         <header data-role="header">
-        	<h1>Choose Dog</h1>
-            <img class="logo-icon" src="img/icons/logo_small.jpg">
             <ul>
                 <li><a class="action-button" href="#" data-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                <h1>Choose Dog</h1>
                 <li class="flex-stretch"></li>
                 <li><a class="action-button" href="#choose-location-page" data-activate="#list-add-dog-modal">Next</a></li>
             </ul>
@@ -290,7 +267,7 @@
 	        <div class="flex-stretch"></div>
 	        <form id="choose-dog-add-form" class="form"></form>
 	        <div class="flex-stretch"></div> -->
-            <div class="page-title">All my dogs</div>
+            <div class="page-title"></div>
             <!--ul>li*10>a[href=#dog-profile-page]>{Dog $} -->
             	<ul class="dog-list">
             	</ul>
@@ -300,10 +277,10 @@
 
     <section data-role="page" id="choose-location-page">
         <header data-role="header">
-        	<h1>Choose Location</h1>
-            <img class="logo-icon" src="img/icons/logo_small.jpg">
             <ul>
                 <li><a class="action-button" href="#" data-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                <h1>Choose Location</h1>
                 <li class="flex-stretch"></li>
                 <li><a class="action-button" href="#choose-mood-page" data-activate="#list-add-dog-modal">Next</a></li>
             </ul>
@@ -322,23 +299,21 @@
 
 <section data-role="page" id="choose-mood-page">
         <header data-role="header">
-        	<h1>Describe the dog's mood</h1>
-            <img class="logo-icon" src="img/icons/logo_small.jpg">
             <ul>
                 <li><a class="action-button" href="#" data-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                <h1>Describe the dog's mood</h1>
                 <li class="flex-stretch"></li>
                 <li><a class="js-submit-location-add" data-activate="#list-add-dog-modal">Save</a></li>
             </ul>
         </header>
-        <div data-role="main" style="padding:1em">
+        <div data-role="main">
+        <div class="flex-stretch"></div>
+        <form id="choose-description-form" class="form">
         	<textarea id="location-mood" class="form-input" data-role="none"></textarea>
-
-        <div>
-            <div class="dog-img">Dog image</div>
-        </div>
+        </form>
         <div class="flex-stretch"></div>
-        <form id="choose-description-form" class="form"></form>
-        <div class="flex-stretch"></div>
+    	</div>
     </section>
 
 
@@ -350,59 +325,29 @@
 
     <section data-role="page" id="user-profile-page">
         <header data-role="header">
-            <img class="logo-icon" src="img/icons/logo_small.jpg">
             <ul>
             	<li><a class="action-button" href="#user-password-page">Settings</a></li>
                 <li class="flex-stretch"></li>
                 <li><a class="action-button" href="#signin-page" class="js-logout">Logout</a></li>
             </ul>
         </header>
-        <div data-role="main"></div>
+        <div data-role="main" class="scrollable"></div>
         <footer data-role="footer" data-template="#footer-template"></footer>
     </section>
 
 
-
-
-    <section data-role="page" id="user-settings-page">
+    <section data-role="page" id="user-profile-edit-page">
         <header data-role="header">
-            <!-- <img class="logo-icon" src="img/icons/logo_small.jpg"> -->
-            <div class="logo-icon"> Setting </div>
             <ul>
                 <li><a class="action-button" href="#" data-rel="back">Back</a></li>
                 <li class="flex-stretch"></li>
-                <li><a class="action-button" href="#signin-page" class="js-logout">Logout</a></li>
-
-            </ul>
-        </header>
-        <div data-role="main">
-            <div class="home-page-title">Xiao</div>
-            <div class="user-img">User image</div>
-        <ul>
-        	<li><a href="#user-profile-edit-page">Edit user</a></li>
-        	<li><a href="#user-password-page">Edit Password</a></li>
-        </ul>
-        </div>
-        <div class="flex-stretch"></div>
-        <form id="user-edit-form" class="form"></form>
-        <div class="flex-stretch"></div>
-    </section>
-
-
-
-
-    <section data-role="page" id="user-profile-edit-page">
-        <header data-role="header">
-            <!-- <img class="logo-icon" src="img/icons/logo_small.jpg"> -->
-            <div class="logo-icon"> Edit profile </div>
-            <ul>
-                <li><a class="action-button" href="#" data-rel="back">Back</a></li>
+                <div class="logo-icon"> Edit profile </div>
                 <li class="flex-stretch"></li>
                 <li><a class="action-button js-submit-user-edit">Save</a></li>
             </ul>
         </header>
         <div>
-            <div class="user-img">User image</div>
+            <img class="dog-img"></div>
         </div>
         <div class="flex-stretch"></div>
         <form id="user-profile-edit-form" class="form"></form>
@@ -411,9 +356,10 @@
 
     <section data-role="page" id="user-password-page">
         <header data-role="header">
-        	<h1>Edit User</h1>
             <ul>
                 <li><a href="#" data-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                <h1>Edit User</h1>
                 <li class="flex-stretch"></li>
                 <li><a href="#" class="js-submit-user-password">Save</a></li>
             </ul>
@@ -447,6 +393,31 @@
                <div class="modal-foot"></div>
            </div>
     </div>
+
+
+
+    <section data-role="page" id="user-edit-photo-page">
+        <header data-role="header">
+        	<h1>Upload Photo</h1>
+            <ul>
+                <li><a href="#" data-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#" class="js-submit-user-upload">Save</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+        	<div class="img-picker-instruction">Click anywhere to update image</div>
+        	<div class="img-picer-container">
+        	<input type="hidden" id="user-edit-photo-image">
+        	<label class="imagepicker replace">
+               <input type='file' id="user-edit-photo-input" data-role="none">
+        	</label>
+        	</div>
+        </div>
+    </section>
+
+
+
 
     <script type="text/template" id="footer-template">
         <ul class="nav-icon-set">

@@ -13,7 +13,7 @@ const makeDogList = templater(o=>`
 </li>
 `);
 
-const makeDogListForAddLocation = templater(o=>`
+const makeDogListForAddLocation = templater(o=>`    
 <li class="dog-list-item">
     <a href="#dog-profile-page" class="js-add-dog-location-dog-selection" data-id="${o.id}">
         <div class="dog-list-image"><img src="${o.img}" alt=""></div>
@@ -26,10 +26,49 @@ const makeDogListForAddLocation = templater(o=>`
 </li>
 `);
 
+const makeDogProfilePage = dog => `
+    <div class="profile-head">
+        <img src="${dog.img}">
+        <a href="#dog-edit-photo-page" class="floater left bottom">
+            <img src="img/icons/pencil_icon.png" class="icon">
+        </a>
+    </div>
+    <a class="form-button" href="#dog-profile-edit-page">Edit</a>
+    <a class="form-button-icon js-dog-delete noclick-children">
+        <img class="form-icon" src="img/icons/delete_icon.jpg">
+    </a>
+    <ul class="dog-list">
+        <li>
+            <div class="profile-list-item">
+                <div class="profile-list-label">Breed</div>
+                <div class="profile-list-value dog-profile-breed-value">${dog.breed}</div>
+            </div>
+        </li>
+        <li>
+            <div class="profile-list-item">
+                <div class="profile-list-label">Color</div>
+                <div class="profile-list-value dog-profile-color-value">${dog.color}</div>
+            </div>
+        </li>
+        <li>
+            <div class="profile-list-item">
+                <div class="profile-list-label">Size</div>
+                <div class="profile-list-value dog-profile-size-value">${dog.size}</div>
+            </div>
+        </li>
+    </ul>
+`
+
 
 const makeUserProfilePage = o => `
 <div class="home-page-title">${o.name}</div>
-            <div class="user-img">User image</div>
+
+            <div class="profile-head">
+                <img src="${o.img}">
+                <a href="#user-edit-photo-page" class="floater left bottom">
+                    <img src="img/icons/pencil_icon.png" class="icon">
+                </a>
+            </div>
             <a class="form-button" href="#user-profile-edit-page">Edit</a>
             <ul class="profile-list">
                 <li>

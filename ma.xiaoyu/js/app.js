@@ -15,8 +15,11 @@ $(() => {
 
       case "user-profile-page": UserProfilePage(); break;
       case "user-profile-edit-page": UserEditPage(); break;
+      case "user-edit-photo-page": UserEditPhotoPage(); break;
+
 
       case "dog-profile-page": DogProfilePage(); break;
+      case "dog-edit-photo-page": DogEditPhotoPage(); break;
       case "dog-profile-edit-page": DogEditPage(); break;
       case "dog-profile-add-page": DogAddPage(); break;
 
@@ -48,6 +51,12 @@ $(() => {
       submitLocationAdd();
    })
 
+   .on("submit","#list-search-form", function(e){
+      e.preventDefault();
+      let s = $(this).find("input").val();
+      checkSearchForm(s);
+   })
+
 
 
 
@@ -64,6 +73,54 @@ $(() => {
    .on("click", ".js-submit-dog-edit", function() {
       submitDogEdit();
    })
+
+
+
+   .on("change",".imagepicker input", function(e){
+       checkUpload(this.files[0])
+       .then(d=>{
+          console.log(d)
+          let filename = `uploads/${d.result}`;
+          $(this).parent().prev().val(filename)
+          $(this).parent().css({
+             "background-image":`url(${filename})`
+          })
+       })
+   })
+   .on("click", ".js-submit-user-upload", function(e){
+       let image = $("#user-edit-photo-image").val();
+       console.log(image);
+       query({
+          type:"update_user_image",
+          params:[image,sessionStorage.userId]
+       }).then(d=>{
+          if(d.error) throw(d.error);
+          history.go(-1);
+       })
+   })
+
+   .on("click", ".js-submit-dog-upload", function(e){
+       let image = $("#dog-edit-photo-image").val();
+       console.log(image);
+       query({
+          type:"update_dog_image",
+          params:[image,sessionStorage.dogId]
+       }).then(d=>{
+          if(d.error) throw(d.error);
+          history.go(-1);
+       })
+   })
+
+
+
+
+  .on("click", "[data-filter]", function(e) {
+     let {filter, value} = $(this).data();
+     if(value=="") ListPage();
+     else checkFilter(filter,value);
+  })
+
+
 
 
    // CLICKS
