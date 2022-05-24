@@ -61,8 +61,6 @@ const makeDogProfilePage = dog => `
 
 
 const makeUserProfilePage = o => `
-<div class="home-page-title">${o.name}</div>
-
             <div class="profile-head">
                 <img src="${o.img}">
                 <a href="#user-edit-photo-page" class="floater left bottom">
@@ -106,12 +104,12 @@ const makeDogProfilePageDescription = o => `
 
 const makeDogPopupBody = o => `
 <div class="display-flex">
-   <div class="animal-list-image"><img src="${o.img}" alt=""></div>
    </div>
        <h2>${o.name}</h2>
-       <div>${o.breed}</div>
-       <div>${o.color}</div>
-       <div>${o.size}</div>
+       <div>Breed: ${o.breed}</div>
+       <div>Color: ${o.color}</div>
+       <div>Size: ${o.size}</div>
+       <div>Mood: ${o.mood}</div>
    </div>
 </div>
 `;

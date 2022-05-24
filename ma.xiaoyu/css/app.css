@@ -82,10 +82,16 @@ a:hover {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    margin: 3em 3em 3em 3em ;
+    /*margin: 3em 3em 3em 3em ;*/
 }
-.imagepicker.replace input {
+.imagepicker.replace input, #dog-img-picker input {
     display: none;
+}
+
+.imagepicker#dog-img-picker {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .img-picker-instruction {
@@ -245,8 +251,9 @@ a:hover {
     background-color: transparent;
 }
 .hotdog.dark {
-    background-color: var(--color-search-bar);
+    /*background-color: var(--color-search-bar);*/
     color: white;
+    border:1px solid var(--color-sand-dark);
 }
 
 .form-button-icon {
@@ -363,6 +370,8 @@ a:hover {
 
 .action-button {
     color: var(--color-sand-dark);
+    padding-left:20px;
+    padding-right:20px;
 }
 
 
@@ -436,7 +445,7 @@ footer li {
 .ui-header a,
 .ui-footer a {
     display: block;
-    padding: 0;
+    /*padding: 0;*/
     position: relative;
     top: 0;
     left: 0;
@@ -444,7 +453,7 @@ footer li {
     text-align: center;
 }
 
-.dog-img {
+.dog-img, #dog-img-picker {
     display:block;
     margin: auto;
     text-align: center;
@@ -479,7 +488,7 @@ footer li {
     color: var(--color-sand-dark);
 }
 
-.page-title, .dog-profile-page-title, .home-page-title {
+.page-title, .home-page-title {
     display: block;
     font: var(--font-new-order);
     font-size: 25px;
@@ -487,10 +496,6 @@ footer li {
     margin: 0 auto;
     text-align: center;
     margin-bottom: 100px;
-}
-
-.dog-profile-page-title {
-    margin-bottom: 50px;
 }
 
 .home-page-title {
@@ -560,8 +565,8 @@ footer li {
 
 
 .icon {
-    width: 2rem;
-    height: 2rem;
+    width: 2.0rem;
+    height: 2.0rem;
     vertical-align: middle;
 }
 
@@ -612,7 +617,7 @@ footer li {
 .logo-icon {
     display:block;
     margin:0 auto;
-    margin-top: 5px;
+    /*margin-top: 5px;*/
     vertical-align: middle;
     text-align: center;
 }

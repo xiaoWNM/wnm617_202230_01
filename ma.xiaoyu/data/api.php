@@ -133,7 +133,7 @@ function makeStatement($data) {
             `track_animals`
             (`user_id`, `name`,`breed`,`color`, `size`, `img`,`date_create`)
             VALUES
-            (?,?,?,?,?, 'https:via.placeholder.com/400/?text=DOG', NOW())
+            (?,?,?,?,?,?, NOW())
             ", $p, false);
          return ["id"=>$c->lastInsertId()];
 

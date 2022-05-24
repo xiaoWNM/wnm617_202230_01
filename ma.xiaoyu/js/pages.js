@@ -70,6 +70,7 @@ const UserProfilePage = async() => {
    console.log(user)
 
    $("#user-profile-page [data-role='main']").html(makeUserProfilePage(user));
+   $("#user-profile-page .logo-icon").html(user.name);
 
 }
 
@@ -110,12 +111,8 @@ const UserPasswordPage = async() => {
 	console.log(user)
 
 	$('#user-password-form').html(makeUserPasswordForm(user))
+	$("#user-password-page .dog-img").attr("src", user.img)
 }
-
-
-
-
-
 
 
 
@@ -126,7 +123,7 @@ const DogProfilePage = async() => {
    })
    let [dog] = dogs;
    // console.log(dog);
-   $(".dog-profile-page-title").html(dog.name);
+   $("#dog-profile-page .logo-icon").html(dog.name);
    // $(".dog-profile-decription").html(makeDogProfilePageDescription(dog));
    $("#dog-profile-page [data-role='main']").html(makeDogProfilePage(dog));
 }
@@ -178,13 +175,16 @@ const DogAddPage = async() => {
 const ChooseLocationPage = async () => {
 	let map_el = await makeMap("#choose-location-page .map");
 
+	prev_markers = []
+
 	map_el.data("map").addListener("click",function(e){
+		clearMarkers(prev_markers)
 		console.log(e)
 		console.log(e.latLng.lat())
 		console.log(e.latLng.lng())
 		$("#location-lat").val(e.latLng.lat())
 		$("#location-lng").val(e.latLng.lng())
-	    makeMarkers(map_el,[e.latLng])
+	    prev_markers = makeMarkers(map_el,[e.latLng])
 	})
 }
 

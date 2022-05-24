@@ -6,21 +6,32 @@ const submitDogAdd = async () => {
 	let breed = $("#dog-add-breed").val();
 	let color = $("#dog-add-color").val();
 	let size = $("#dog-add-size").val();
-
-
+	let image = $("#dog-add-photo-image").val();
+    console.log(image);
     console.log({name,breed,color,size});
 
     if(name!="" && breed!="" && color!="" && size!="") {
        let {id,error} = await query({
     	  type: 'insert_dog',
-    	  params: [sessionStorage.userId,name,breed,color,size]
+    	  params: [sessionStorage.userId,name,breed,color,size,image]
        });
+       clearDogImagePicker();
        if(error) throw(error);
        sessionStorage.dogId = id;
        history.go(-1);
     } else {
     	throw("Not all data present");
     }
+}
+
+const clearDogImagePicker = async() => {
+	$("#dog-profile-add-page .img-upload-label").css({
+          "display": "block",
+      })
+      $("#dog-img-picker").css({
+          "background-image": "none",
+      })
+      $("#dog-add-photo-image").val("")
 }
 
 
@@ -59,8 +70,7 @@ const submitUserSignup = async () => {
 
 	if(password2!=password) {
 		throw("Passwords don't match");
-	} else
-    if(username!="" && email!="" && password!="") {
+	} else if(username!="" && email!="" && password!="") {
        let {id,error} = await query({
     	  type: 'insert_user',
     	  params: [username,email,password]

@@ -19,12 +19,17 @@ const makeMap = async (target, center={ lat: 37.404125, lng: -122.112185 }) => {
 	return map_el;
 }
 
+const clearMarkers = (markers=[]) => {
+  markers.forEach(m=>{
+    m.setMap(null)
+  });
+}
 
 const makeMarkers = (map_el, map_locs=[]) => {
 	let map = map_el.data("map");
 
-
 	markers = [];
+
 
     map_locs.forEach(l=>{
     	let m = new google.maps.Marker({
@@ -41,8 +46,14 @@ const makeMarkers = (map_el, map_locs=[]) => {
     	markers.push(m);
     });
 
+    markers.forEach(m=>{
+      m.setM
+    })
+
     map_el.data({markers});
     setTimeout(()=>{ setMapBounds(map_el,map_locs); }, 150);
+    
+    return markers;
 }
 
 

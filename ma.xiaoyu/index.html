@@ -115,7 +115,11 @@
         <header data-role="header">
             <ul>
                 <li class="flex-stretch"></li>
-                <li><a class="action-button js-location-choose-dog" href="#choose-dog-page">Add</a></li>
+                <li>
+                	<a class="action-button js-location-choose-dog" href="#choose-dog-page">
+                		<img class="icon" src="img/icons/add_icon.png">
+                	</a>
+                </li>
             </ul>
         </header>
         <div data-role="main">
@@ -141,11 +145,15 @@
     	<header data-role="header">	
             <ul>
                 <li class="flex-stretch"></li>
-                <li><a class="action-button" href="#dog-profile-add-page">Add</a></li>
+                <li>
+                	<a class="action-button" href="#dog-profile-add-page">
+                		<img class="icon" src="img/icons/add_icon.png">
+                	</a>
+                </li>
             </ul>
         </header>
         
-        <div data-role="main" class="overscroll">
+        <div data-role="main" class="scrollable">
         	<div class="search-bar flex-none"></div>
         	   <form data-ajax="false" id="list-search-form" class="hotdog dark">
         	   	  <input type="search" data-role="none" placeholder="Search for a dog">
@@ -174,11 +182,19 @@
     <section data-role="page" id="dog-profile-page">
         <header data-role="header">
             <ul>
-                <li><a class="action-button" href="#" data-rel="back">Back</a></li>
-                <li class="flex-stretch"></li>
-                <div class="logo-icon dog-profile-page-title"></div>
-                <li class="flex-stretch"></li>
-                
+                <li>
+                	<a class="action-button" href="#" data-rel="back">
+                		<img class="icon" src="img/icons/back_icon.png">
+                	</a>
+                </li>
+                <li class="flex-stretch">
+                	<h1 class="logo-icon"></h1>
+                </li>
+                <li>
+                	<div class="action-button">
+                		<div class="icon">
+                	</div>
+                </li>
             </ul>
         </header>
         <div data-role="main" class="scrollable">
@@ -189,11 +205,19 @@
     <section data-role="page" id="dog-edit-photo-page">
         <header data-role="header">
             <ul>
-                <li><a href="#" data-rel="back">Back</a></li>
+                <li>
+                	<a class="action-button" href="#" data-rel="back">
+                		<img class="icon" src="img/icons/back_icon.png">
+                	</a>
+                </li>
                 <li class="flex-stretch"></li>
-                <h1>Upload Photo</h1>
+                <h1 class="logo-icon">Upload Photo</h1>
                 <li class="flex-stretch"></li>
-                <li><a href="#" class="js-submit-dog-upload">Save</a></li>
+                <li>
+                	<a class="action-button" href="#" class="js-submit-dog-upload">
+                		<img class="icon" src="img/icons/save_icon.png">
+                	</a>
+                </li>
             </ul>
         </header>
         <div data-role="main">
@@ -211,13 +235,26 @@
     <section data-role="page" id="dog-profile-add-page">
         <header data-role="header">
             <ul>
-                <li><a class="action-button" href="#" data-rel="back">Back</a></li>
+                <li>
+                	<a class="action-button back" href="#" data-rel="back">
+                		<img class="icon" src="img/icons/back_icon.png">
+                	</a>
+                </li>
                 <li class="flex-stretch"></li>
-                <li><a class="action-button js-submit-dog-add" data-activate="#list-add-animal-modal">Save</a></li>
+                <li>
+                	<a class="action-button js-submit-dog-add" data-activate="#list-add-animal-modal">
+                		<img class="icon" src="img/icons/save_icon.png">
+                	</a>
+                </li>
             </ul>
         </header>
         <div>
-            <div class="dog-img">Dog image</div>
+            <!-- <div class="dog-img">Dog image</div> -->
+            <input type="hidden" id="dog-add-photo-image">
+        	<label class="imagepicker" id="dog-img-picker">
+               <input type='file' id="dog-add-photo-input" data-role="none">
+               <label class="img-upload-label">Click to upload image</label>
+        	</label>
         </div>
         <div class="flex-stretch"></div>
         <form id="dog-profile-add-form" class="form"></form>
@@ -230,9 +267,17 @@
     <section data-role="page" id="dog-profile-edit-page">
         <header data-role="header">
             <ul>
-                <li><a class="action-button" href="#" data-rel="back">Back</a></li>
+                <li>
+                	<a class="action-button" href="#" data-rel="back">
+                		<img class="icon" src="img/icons/back_icon.png">
+                	</a>
+                </li>
                 <li class="flex-stretch"></li>
-                <li><a class="action-button js-submit-dog-edit">Save</a></li>
+                <li>
+                	<a class="action-button js-submit-dog-edit">
+                		<img class="icon" src="img/icons/save_icon.png">
+                	</a>
+                </li>
             </ul>
         </header>
         <div>
@@ -252,9 +297,13 @@
     <section data-role="page" id="choose-dog-page">
         <header data-role="header">
             <ul>
-                <li><a class="action-button" href="#" data-rel="back">Back</a></li>
+                <li>
+                	<a class="action-button" href="#" data-rel="back">
+                		<img class="icon" src="img/icons/back_icon.png">
+                	</a>
+                </li>
                 <li class="flex-stretch"></li>
-                <h1>Choose Dog</h1>
+                <h1 class="logo-icon">Choose Dog</h1>
                 <li class="flex-stretch"></li>
                 <li><a class="action-button" href="#choose-location-page" data-activate="#list-add-dog-modal">Next</a></li>
             </ul>
@@ -267,7 +316,7 @@
 	        <div class="flex-stretch"></div>
 	        <form id="choose-dog-add-form" class="form"></form>
 	        <div class="flex-stretch"></div> -->
-            <div class="page-title"></div>
+            <div class="logo-icon"></div>
             <!--ul>li*10>a[href=#dog-profile-page]>{Dog $} -->
             	<ul class="dog-list">
             	</ul>
@@ -278,9 +327,13 @@
     <section data-role="page" id="choose-location-page">
         <header data-role="header">
             <ul>
-                <li><a class="action-button" href="#" data-rel="back">Back</a></li>
+                <li>
+                	<a class="action-button" href="#" data-rel="back">
+                		<img class="icon" src="img/icons/back_icon.png">
+                	</a>
+                </li>
                 <li class="flex-stretch"></li>
-                <h1>Choose Location</h1>
+                <h1 class="logo-icon">Choose Location</h1>
                 <li class="flex-stretch"></li>
                 <li><a class="action-button" href="#choose-mood-page" data-activate="#list-add-dog-modal">Next</a></li>
             </ul>
@@ -297,20 +350,28 @@
         <div class="flex-stretch"></div>
     </section>
 
-<section data-role="page" id="choose-mood-page">
+	<section data-role="page" id="choose-mood-page">
         <header data-role="header">
             <ul>
-                <li><a class="action-button" href="#" data-rel="back">Back</a></li>
+                <li>
+                	<a class="action-button" href="#" data-rel="back">
+                		<img class="icon" src="img/icons/back_icon.png">
+                	</a>
+                </li>
                 <li class="flex-stretch"></li>
-                <h1>Describe the dog's mood</h1>
+                <h1 class="logo-icon">Dog's mood</h1>
                 <li class="flex-stretch"></li>
-                <li><a class="js-submit-location-add" data-activate="#list-add-dog-modal">Save</a></li>
+                <li>
+                	<a class="js-submit-location-add action-button" data-activate="#list-add-dog-modal">
+                		<img class="icon" src="img/icons/save_icon.png">
+                	</a>
+                </li>
             </ul>
         </header>
         <div data-role="main">
         <div class="flex-stretch"></div>
         <form id="choose-description-form" class="form">
-        	<textarea id="location-mood" class="form-input" data-role="none"></textarea>
+        	<textarea id="location-mood" class="form-input" data-role="none" placeholder="type in mood"></textarea>
         </form>
         <div class="flex-stretch"></div>
     	</div>
@@ -328,6 +389,8 @@
             <ul>
             	<li><a class="action-button" href="#user-password-page">Settings</a></li>
                 <li class="flex-stretch"></li>
+                <h1 class="logo-icon"></h1>
+                <li class="flex-stretch"></li>
                 <li><a class="action-button" href="#signin-page" class="js-logout">Logout</a></li>
             </ul>
         </header>
@@ -339,11 +402,19 @@
     <section data-role="page" id="user-profile-edit-page">
         <header data-role="header">
             <ul>
-                <li><a class="action-button" href="#" data-rel="back">Back</a></li>
+                <li>
+                	<a class="action-button" href="#" data-rel="back">
+                		<img class="icon" src="img/icons/back_icon.png">
+                	</a>
+                </li>
                 <li class="flex-stretch"></li>
-                <div class="logo-icon"> Edit profile </div>
+                <h1 class="logo-icon">Edit profile</h1>
                 <li class="flex-stretch"></li>
-                <li><a class="action-button js-submit-user-edit">Save</a></li>
+                <li>
+                	<a class="action-button js-submit-user-edit">
+                		<img class="icon" src="img/icons/save_icon.png">
+                	</a>
+                </li>
             </ul>
         </header>
         <div>
@@ -357,24 +428,24 @@
     <section data-role="page" id="user-password-page">
         <header data-role="header">
             <ul>
-                <li><a href="#" data-rel="back">Back</a></li>
+                <li>
+                	<a class="action-button" href="#" data-rel="back">
+                		<img class="icon" src="img/icons/back_icon.png">
+                	</a>
+                </li>
                 <li class="flex-stretch"></li>
-                <h1>Edit User</h1>
+                <h1 class="logo-icon">Edit User</h1>
                 <li class="flex-stretch"></li>
-                <li><a href="#" class="js-submit-user-password">Save</a></li>
+                <li>
+                	<a class="action-button" href="#" class="js-submit-user-password">
+                		<img class="icon" src="img/icons/save_icon.png">
+                	</a>
+                </li>
             </ul>
         </header>
         <div data-role="main">
             <img class="dog-img" src="img/unicorn.jpg">
             <form id="user-password-form" class="overscroll" data-ajax="false" style="padding:1em">
-              <!-- <div class="form-control">
-              	<label for="user-password-new" class="form-label">New Password</label>
-              	<input class="form-input" type="password" id="user-password-new" data-role="none">
-              </div>
-              <div class="form-control">
-              	<label for="user-password-confirm" class="form-label">Confirm Password</label>
-              	<input class="form-input" type="password" id="user-password-confirm" data-role="none">
-              </div> -->
             </form>
         </div>
     </section>
@@ -398,11 +469,20 @@
 
     <section data-role="page" id="user-edit-photo-page">
         <header data-role="header">
-        	<h1>Upload Photo</h1>
             <ul>
-                <li><a href="#" data-rel="back">Back</a></li>
+                <li>
+                	<a class="action-button" href="#" data-rel="back">
+                		<img class="icon" src="img/icons/back_icon.png">
+                	</a>
+                </li>
                 <li class="flex-stretch"></li>
-                <li><a href="#" class="js-submit-user-upload">Save</a></li>
+                <h1 class="logo-icon">Upload Photo</h1>
+                <li class="flex-stretch"></li>
+                <li>
+                	<a class="action-button" href="#" class="js-submit-user-upload">
+                		<img class="icon" src="img/icons/save_icon.png">
+                	</a>
+                </li>
             </ul>
         </header>
         <div data-role="main">

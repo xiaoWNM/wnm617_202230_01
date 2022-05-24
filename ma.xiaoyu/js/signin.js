@@ -37,8 +37,6 @@ const checkUserId = () => {
        // logged in
        if(p.some(o => o === window.location.hash))
           $.mobile.navigate("#home-page");
-
-
     }
 
 }

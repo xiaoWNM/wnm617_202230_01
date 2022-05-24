@@ -85,6 +85,9 @@ $(() => {
           $(this).parent().css({
              "background-image":`url(${filename})`
           })
+          $("#dog-profile-add-page .img-upload-label").css({
+              "display": "none",
+          })
        })
    })
    .on("click", ".js-submit-user-upload", function(e){
@@ -97,6 +100,9 @@ $(() => {
           if(d.error) throw(d.error);
           history.go(-1);
        })
+   })
+   .on("click", "#dog-profile-add-page .action-button.back", function(e) {
+      clearDogImagePicker();
    })
 
    .on("click", ".js-submit-dog-upload", function(e){
